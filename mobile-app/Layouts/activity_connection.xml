@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/config_background"
+    tools:context=".ConnectionActivity">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo_config"
+        android:contentDescription="Logo"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/configTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configuration du Réseau"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+    <!-- Champ Nom du Device -->
+    <EditText
+        android:id="@+id/editTextDeviceName"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Nom du Device"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        android:background="@drawable/input_background"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/configTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp" />
+
+    <!-- Champ Adresse IP -->
+    <EditText
+        android:id="@+id/editTextIP"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Adresse IP"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        android:background="@drawable/input_background"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextDeviceName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp" />
+
+    <!-- Champ Port -->
+    <EditText
+        android:id="@+id/editTextPort"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Port"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        android:background="@drawable/input_background"
+        android:inputType="number"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextIP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp" />
+
+    <!-- Bouton Connecter -->
+    <Button
+        android:id="@+id/buttonConnect"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="Connecter"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_background"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextPort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Barre de progression (cachée par défaut) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/buttonConnect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Message de statut (invisible au départ) -->
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status message here"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonConnect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
